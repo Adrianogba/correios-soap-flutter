@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _callCorreiosRastreamento() async {
 
     //ex.: AB123456789BR
-    String codigo = "PS364496594BR";
+    String codigo = "SEU_CODIGO_RASTREAMENTO";
 
     String envelope =
         "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" "
@@ -68,12 +68,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     setState(() {
-      resposta =
-          "Número:"+objeto.numero+"\n"
-              +"Categoria:"+objeto.categoria+"\n"
-              +"Descrição:"+objeto.descricao+"\n"
-              +"Data:"+objeto.data+"\n"
-              +"Hora:"+objeto.hora+"\n";
+      if(objeto.erro!=null){
+        resposta ="Erro: "+objeto.erro;
+      }else{
+        resposta =
+            "Número:"+objeto.numero+"\n"
+                +"Categoria:"+objeto.categoria+"\n"
+                +"Descrição:"+objeto.descricao+"\n"
+                +"Data:"+objeto.data+"\n"
+                +"Hora:"+objeto.hora+"\n";
+      }
     });
 
   }

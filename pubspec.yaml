@@ -1,5 +1,5 @@
 name: correios_app
-description: A new Flutter application.
+description: Simples exemplo de consumo da API SOAP dos correios. Desenvolvido por github.com/adrianogba.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
